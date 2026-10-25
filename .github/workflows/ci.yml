@@ -1,0 +1,24 @@
+name: Checks
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  credential-free:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      # The last accepted v2 phase is recorded in .github/ci-phase; --ci skips backend/live checks (reported NOT_RUN).
+      - run: npm run gate -- "$(cat .github/ci-phase)" --ci
+        env:
+          NEXT_PUBLIC_CONVEX_URL: https://example.convex.cloud
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification
+          path: artifacts/

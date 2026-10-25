@@ -1,0 +1,68 @@
+import { expect, test, type Page } from "@playwright/test";
+import { mkdirSync } from "node:fs";
+import { signInAs } from "../helpers/sign-in";
+async function scrub(page: Page, value: number, label = "Timeline playhead") {
+  await page.getByRole("slider", { name: label, exact: true }).evaluate((element, at) => {
+    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")!.set!.call(element, String(at));
+    element.dispatchEvent(new Event("input", { bubbles: true }));
+    element.dispatchEvent(new Event("change", { bubbles: true }));
+  }, value);
+}
+test("map, playhead, evidence, finances and selected duration stay synchronized", async ({ page }) => {
+  const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
+  await page.setViewportSize({ width: 1500, height: 1100 }); await signInAs(page, "auditor"); await page.goto("/claims/CL-203");
+  const map = page.getByTestId("trajectory-map"); await expect(page.locator(".exposure-total")).toContainText("$20,000", { timeout: 30_000 }); await expect(map).toHaveAttribute("data-loaded", "true");
+  await expect(map.locator("canvas.maplibregl-canvas")).toBeVisible();
+  await expect(page.locator(".exposure-total")).toContainText("$20,000");
+  await expect(page.getByTestId("active-financial-interval")).toContainText("PORT CLOSURE");
+  const slider = page.getByRole("slider", { name: "Timeline playhead", exact: true }), min = Number(await slider.getAttribute("min")), start = min + 6 * 3_600_000;
+  await scrub(page, min + 60 * 60_000);
+  await expect(map.locator(".vessel-marker")).toHaveAttribute("data-at", String(min + 60 * 60_000));
+  const beforeLon = Number(await map.locator(".vessel-marker").getAttribute("data-lon"));
+  await scrub(page, min + 120 * 60_000);
+  await expect(map.locator(".vessel-marker")).toHaveAttribute("data-at", String(min + 120 * 60_000));
+  expect(Number(await map.locator(".vessel-marker").getAttribute("data-lon"))).toBeGreaterThan(beforeLon);
+  await scrub(page, start + 36 * 3_600_000);
+  await expect(page.getByTestId("active-evidence")).toContainText("OPERATIONAL CAUSE UNVERIFIED");
+  await expect(page.getByTestId("active-financial-interval")).toContainText("Cause unverified");
+  await expect(page.getByTestId("playhead-time")).toHaveAttribute("datetime", new Date(start + 36 * 3_600_000).toISOString());
+  await page.locator(".source-document").filter({ hasText: "PORT-V-203" }).locator("summary").click();
+  await page.getByRole("button", { name: "Open PORT-V-203", exact: true }).click();
+  await expect(page.getByRole("dialog")).toContainText("SYNTHETIC port authority notice"); await page.keyboard.press("Escape"); await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.getByRole("button", { name: "Jump to PORT-V-203", exact: true }).click();
+  await expect(slider).toHaveValue(String(start)); await expect(page.getByTestId("active-evidence")).toContainText("PORT NOTICE VERIFIED");
+  await expect(page.locator(".source-document").filter({ hasText: "PORT-V-203" })).toHaveAttribute("data-active", "true");
+  await slider.focus(); await page.keyboard.press("ArrowRight"); await expect(slider).toHaveValue(String(start + 60_000));
+  await page.getByLabel("Playback speed", { exact: true }).selectOption("16");
+  await slider.focus(); await page.keyboard.press("Space"); await expect(page.getByRole("button", { name: "Pause voyage", exact: true })).toBeVisible();
+  await expect.poll(async () => Number(await slider.inputValue())).toBeGreaterThan(start + 60_000);
+  await page.getByRole("button", { name: "Pause voyage", exact: true }).click(); const paused = await slider.inputValue();
+  await page.waitForTimeout(250); await expect(slider).toHaveValue(paused);
+  await page.evaluate(() => { document.addEventListener("breakwater:range-selected", event => { document.body.dataset.rangeEvent = JSON.stringify((event as CustomEvent).detail); }); });
+  await page.getByText("Select time range", { exact: true }).click(); await scrub(page, start, "Range start"); await scrub(page, start + 48 * 3_600_000, "Range end");
+  await expect(page.getByTestId("selection-summary")).toContainText("2880 claimed minutes · 1440 evidenced minutes");
+  await expect.poll(() => page.locator("body").getAttribute("data-range-event")).toContain('"claimedMinutes":2880');
+  await slider.focus(); await page.keyboard.press("Escape"); await expect(page.getByTestId("selection-summary")).toHaveCount(0);
+  await page.getByRole("button", { name: "Jump to PORT-V-203", exact: true }).click();
+  await page.evaluate(() => { (document.activeElement as HTMLElement)?.blur(); window.scrollTo(0, 0); });
+  mkdirSync("artifacts/phase-04", { recursive: true }); await page.screenshot({ path: "artifacts/phase-04/claim-desktop.png", fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 }); expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
+  await expect(slider).toBeVisible();
+  await expect.poll(async () => { const bounds = await map.boundingBox(), vessel = await map.locator(".vessel-marker").boundingBox(); return !!bounds && !!vessel && vessel.x >= bounds.x && vessel.x + vessel.width <= bounds.x + bounds.width && vessel.y >= bounds.y && vessel.y + vessel.height <= bounds.y + bounds.height; }).toBe(true);
+  await page.evaluate(() => window.scrollTo(0, 0)); await page.screenshot({ path: "artifacts/phase-04/claim-mobile.png", fullPage: true });
+  expect(errors).toEqual([]);
+});
+test("AIS gaps hide unsupported movement; reduced motion retains scrub and table access", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" }); await signInAs(page, "auditor"); await page.goto("/claims/CL-213");
+  await expect(page.locator(".exposure-total")).toContainText("$20,000", { timeout: 30_000 });
+  await expect(page.getByTestId("trajectory-map")).toHaveAttribute("data-loaded", "true");
+  const slider = page.getByRole("slider", { name: "Timeline playhead", exact: true }), min = Number(await slider.getAttribute("min")), start = min + 6 * 3_600_000;
+  await scrub(page, start + 24 * 3_600_000);
+  await expect(page.getByTestId("position-status")).toHaveText("Position unknown — AIS gap");
+  await expect(page.locator(".vessel-marker")).toBeHidden(); await expect(page.locator(".ais-gap-notice")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Play voyage", exact: true })).toBeDisabled();
+  await expect(page.locator(".timeline-help")).toContainText("Reduced motion");
+  await slider.focus(); await page.keyboard.press("ArrowLeft"); await expect(slider).toHaveValue(String(start + 24 * 3_600_000 - 60_000));
+  await scrub(page, start); await expect(page.locator(".vessel-marker")).toBeVisible();
+  await page.getByText("AIS observations · accessible table", { exact: true }).click(); await expect(page.getByRole("columnheader", { name: "UTC timestamp", exact: true })).toBeVisible();
+});

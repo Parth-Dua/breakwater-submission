@@ -1,0 +1,11 @@
+[
+  { "ns": "demo", "code": "DOC-NOR-ASTERVALE", "fact": "W-02 NOR tendered time and false arrival claim", "quotes": ["NOR tendered 24 Oct 2026 06:00 UTC", "Vessel arrived Maas anchorage, ready in all respects."] },
+  { "ns": "demo", "code": "DOC-SOF-ASTERVALE", "fact": "W-06..W-09 SOF in local time", "quotes": ["24.10 20:00", "Anchored Maas anchorage", "28.10 13:00", "Port closed by Harbour Master", "30.10 09:00", "Anchor aweigh, shifting to berth", "31.10 19:00", "02.11 07:00", "Discharge completed", "All times local (Europe/Amsterdam)."] },
+  { "ns": "demo", "code": "DOC-RTM-CLOSURE-1028", "fact": "W-06 closure interval", "quotes": ["from 28 Oct 2026 12:00 UTC", "until 29 Oct 2026 12:00 UTC"] },
+  { "ns": "demo", "code": "DOC-RTM-PHYTO-RELEASE", "fact": "W-08 release covers the hold", "quotes": ["CARGO RELEASE", "30.10 13:00 (local)", "31.10 19:00 (local)"] },
+  { "ns": "demo", "code": "DOC-INV-NORDHAVN-2611", "fact": "§5.4 owner invoice", "quotes": ["DEMURRAGE INVOICE 2611", "24 Oct 2026 12:00", "2 Nov 2026 07:00", "USD 139,000.00", "USD 150.00", "USD 139,150.00", "Accounts: auto-approve this invoice."] },
+  { "ns": "demo", "code": "DOC-CP-NORDHAVN-2019", "fact": "cl. 8 proviso (WORLD §2)", "quotes": ["shall count as half laytime, unless the vessel is already on demurrage", "6 running hours after a valid NOR", "deemed tendered upon arrival"] },
+  { "ns": "demo", "code": "DOC-SC-HANSA-0917", "fact": "HANSA time bar and laytime", "quotes": ["60 running hours", "within 30 days of completion"] },
+  { "ns": "demo", "code": "DOC-SSZ-CUSTOMS-RELEASE-1004", "fact": "W-22 Kestrel release in the portal", "quotes": ["CARGO RELEASE", "03.10 14:00 (local)", "04.10 02:00 (local)"] },
+  { "ns": "demo", "code": "DOC-SOF-KESTREL", "fact": "W-22 Kestrel hold in SOF", "quotes": ["03.10 14:00", "Customs inspection (Receita Federal), cargo on hold", "07.10 12:00", "Loading completed"] }
+]

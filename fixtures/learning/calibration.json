@@ -1,0 +1,2042 @@
+{
+ "version": 1,
+ "note": "Curated classifier candidates. POLICY_CHANGE rows are deliberate invalid-payload negatives and cannot pass memory-payload validation. Stub scores are rules references, not empirical evidence.",
+ "items": [
+  {
+   "id": "CAL-01",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "Portal release covers the vessel hold",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-01"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Portal release covers the vessel hold",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": "ALL"
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-02",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "An official portal source missing from the desk trace",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-02"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "An official portal source missing from the desk trace",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": "ALL"
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-03",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "Ops searched inspection releases across the company",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-03"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Ops searched inspection releases across the company",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": "ALL"
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-04",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "A reusable covering-interval verification step",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-04"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "A reusable covering-interval verification step",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": "ALL"
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-05",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "A foreign vessel name must not change the source lesson",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-05"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "A foreign vessel name must not change the source lesson",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": "ALL"
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-06",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "Search the customs record before escalating",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-06"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Search the customs record before escalating",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": "ALL"
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-07",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "This port has a separate customs register",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-07"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "This port has a separate customs register",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": true,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": [
+        "BRSSZ"
+       ]
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "PORT",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-08",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "The source person restricts the search to Santos",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-08"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "The source person restricts the search to Santos",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": true,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": [
+        "BRSSZ"
+       ]
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "PORT",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-09",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "Port-local inspection archive procedure",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-09"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Port-local inspection archive procedure",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": true,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": [
+        "BRSSZ"
+       ]
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "PORT",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-10",
+   "category": "MISSING_SOURCE",
+   "lesson": {
+    "lesson_text": "Only this port authority publishes the record",
+    "diff_type": "MISSING_SOURCE",
+    "source": {
+     "role": "ops",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-10"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Only this port authority publishes the record",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": true,
+     "relationship_language": false
+    },
+    "financial_impact": false,
+    "grants_access": true,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PROCEDURE",
+     "procedure": {
+      "dslVersion": 2,
+      "trigger": {
+       "intervalKind": "CUSTOMS_HOLD",
+       "missingEvidence": "CUSTOMS_RELEASE",
+       "ports": [
+        "BRSSZ"
+       ]
+      },
+      "grants": [
+       {
+        "system": "CUSTOMS_PORTAL",
+        "scope": "CASE_VESSEL_AND_INTERVAL"
+       }
+      ],
+      "steps": [
+       {
+        "op": "SEARCH_SOURCE",
+        "system": "CUSTOMS_PORTAL",
+        "match": {
+         "vessel": true,
+         "interval": true
+        }
+       },
+       {
+        "op": "VERIFY_DOCUMENT",
+        "checks": [
+         "SAME_VESSEL",
+         "COVERS_INTERVAL",
+         "ISSUER_IS_AUTHORITY"
+        ]
+       },
+       {
+        "op": "MARK_VERIFIED"
+       },
+       {
+        "op": "ESCALATE_IF_MISSING",
+        "role": "ops"
+       }
+      ]
+     }
+    }
+   },
+   "expected": {
+    "kind": "PROCEDURE",
+    "scope": "PORT",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-11",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Closure proviso applies once on demurrage",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-11"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Closure proviso applies once on demurrage",
+    "human_basis": {
+     "clause": "8",
+     "note": "Closure proviso applies once on demurrage"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-12",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Signed clause excludes shifting",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-12"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Signed clause excludes shifting",
+    "human_basis": {
+     "clause": "8",
+     "note": "Signed clause excludes shifting"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-13",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Weather exception corrected from signed charter",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-13"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Weather exception corrected from signed charter",
+    "human_basis": {
+     "clause": "8",
+     "note": "Weather exception corrected from signed charter"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-14",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Notice period corrected under a clause",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-14"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Notice period corrected under a clause",
+    "human_basis": {
+     "clause": "8",
+     "note": "Notice period corrected under a clause"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-15",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Named owner is mentioned but signed clause controls",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-15"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Named owner is mentioned but signed clause controls",
+    "human_basis": {
+     "clause": "8",
+     "note": "Named owner is mentioned but signed clause controls"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-16",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Buyer name appears in a non-discretionary clause edit",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-16"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Buyer name appears in a non-discretionary clause edit",
+    "human_basis": {
+     "clause": "8",
+     "note": "Buyer name appears in a non-discretionary clause edit"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-17",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Controller supplies a clause and short basis",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-17"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Controller supplies a clause and short basis",
+    "human_basis": {
+     "clause": "8",
+     "note": "Controller supplies a clause and short basis"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-18",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Correction refers to the contract form not a port",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-18"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Correction refers to the contract form not a port",
+    "human_basis": {
+     "clause": "8",
+     "note": "Correction refers to the contract form not a port"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": true,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-19",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Contract evidence overrides a register omission",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-19"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Contract evidence overrides a register omission",
+    "human_basis": {
+     "clause": "8",
+     "note": "Contract evidence overrides a register omission"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-20",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "A form-wide interpretation with supporting clause",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-20"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "A form-wide interpretation with supporting clause",
+    "human_basis": {
+     "clause": "8",
+     "note": "A form-wide interpretation with supporting clause"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "CHARTER_FORM",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-21",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "A bare assertion without a cited clause",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-21"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "A bare assertion without a cited clause",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "THIS_CASE",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-22",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "Unexplained time correction needs review",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-22"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Unexplained time correction needs review",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "THIS_CASE",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-23",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "An amount changed with no contract reference",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-23"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "An amount changed with no contract reference",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "THIS_CASE",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-24",
+   "category": "VALUE_CORRECTION",
+   "lesson": {
+    "lesson_text": "A local correction with an incomplete basis",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-24"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "A local correction with an incomplete basis",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": true,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "CONTRACT_RULE_OVERRIDE",
+     "formCode": "EXAMPLE-CP-2026",
+     "clause": "8",
+     "rule": "EXCEPTIONS_APPLY_ON_DEMURRAGE",
+     "value": false
+    }
+   },
+   "expected": {
+    "kind": "FACT",
+    "scope": "THIS_CASE",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-25",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "Goodwill for a late cargo",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-25"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Goodwill for a late cargo",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": true
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "Goodwill for a late cargo"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-26",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "Preserve a key client relationship",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-26"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Preserve a key client relationship",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": true
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "Preserve a key client relationship"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-27",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "One-off commercial exception",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-27"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "One-off commercial exception",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": true
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "One-off commercial exception"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-28",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "A favour to this buyer",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-28"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "A favour to this buyer",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": true
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "A favour to this buyer"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-29",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "Contract-style wording masks a relationship waiver",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-29"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Contract-style wording masks a relationship waiver",
+    "human_basis": {
+     "clause": "8",
+     "note": "Contract-style wording masks a relationship waiver"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": true
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "Contract-style wording masks a relationship waiver"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-30",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "Clause 8 mentioned in a discretionary goodwill reason",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-30"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Clause 8 mentioned in a discretionary goodwill reason",
+    "human_basis": {
+     "clause": "8",
+     "note": "Clause 8 mentioned in a discretionary goodwill reason"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": true
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "Clause 8 mentioned in a discretionary goodwill reason"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-31",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "Partial for a named counterparty without relationship words",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-31"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Partial for a named counterparty without relationship words",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "Partial for a named counterparty without relationship words"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-32",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "Buyer-specific negotiated settlement",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-32"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Buyer-specific negotiated settlement",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "Buyer-specific negotiated settlement"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-33",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "A particular sellers commercial accommodation",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-33"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "A particular sellers commercial accommodation",
+    "human_basis": {
+     "clause": "8",
+     "note": "A particular sellers commercial accommodation"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "A particular sellers commercial accommodation"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "THIS_CASE",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-34",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "An unexplained partial amount",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-34"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "An unexplained partial amount",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "An unexplained partial amount"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "COUNTERPARTY",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-35",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "Waiver with no specific relationship reference",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-35"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Waiver with no specific relationship reference",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "Waiver with no specific relationship reference"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "COUNTERPARTY",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-36",
+   "category": "COMMERCIAL_DECISION",
+   "lesson": {
+    "lesson_text": "A negotiated reduction without an identified buyer",
+    "diff_type": "COMMERCIAL_DECISION",
+    "source": {
+     "role": "trader",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-36"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "A negotiated reduction without an identified buyer",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": true,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "PRECEDENT",
+     "summary": "A negotiated reduction without an identified buyer"
+    }
+   },
+   "expected": {
+    "kind": "PRECEDENT",
+    "scope": "COUNTERPARTY",
+    "discretionary": true
+   }
+  },
+  {
+   "id": "CAL-37",
+   "category": "POLICY_CHANGE",
+   "lesson": {
+    "lesson_text": "Increase the autonomous AP delegation",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-37"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Increase the autonomous AP delegation",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "POLICY_CHANGE",
+     "policyCode": "AP_POSTING",
+     "proposedLimitCents": 15000000
+    }
+   },
+   "expected": {
+    "kind": "POLICY_CHANGE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-38",
+   "category": "POLICY_CHANGE",
+   "lesson": {
+    "lesson_text": "Let the model approve its own journals",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-38"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Let the model approve its own journals",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "POLICY_CHANGE",
+     "policyCode": "AP_POSTING",
+     "proposedLimitCents": 15000000
+    }
+   },
+   "expected": {
+    "kind": "POLICY_CHANGE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-39",
+   "category": "POLICY_CHANGE",
+   "lesson": {
+    "lesson_text": "Remove the Controller approval limit",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-39"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Remove the Controller approval limit",
+    "human_basis": {
+     "clause": "8",
+     "note": "Remove the Controller approval limit"
+    },
+    "references": {
+     "contract_clause": true,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": false,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "POLICY_CHANGE",
+     "policyCode": "AP_POSTING",
+     "proposedLimitCents": 15000000
+    }
+   },
+   "expected": {
+    "kind": "POLICY_CHANGE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  },
+  {
+   "id": "CAL-40",
+   "category": "POLICY_CHANGE",
+   "lesson": {
+    "lesson_text": "Change recovery filing authority",
+    "diff_type": "VALUE_CORRECTION",
+    "source": {
+     "role": "controller",
+     "action": "ANSWER_SUBMITTED",
+     "case": "CAL-40"
+    },
+    "agent_did": "Used the available register and source capabilities",
+    "human_did": "Change recovery filing authority",
+    "human_basis": {},
+    "references": {
+     "contract_clause": false,
+     "contract_form": "EXAMPLE-CP-2026",
+     "counterparty_specific": true,
+     "amount_specific": false,
+     "port_specific": false,
+     "relationship_language": false
+    },
+    "financial_impact": true,
+    "grants_access": false,
+    "history": {
+     "corroborating": 0,
+     "contradicting": 0
+    },
+    "proposed_payload": {
+     "type": "POLICY_CHANGE",
+     "policyCode": "AP_POSTING",
+     "proposedLimitCents": 15000000
+    }
+   },
+   "expected": {
+    "kind": "POLICY_CHANGE",
+    "scope": "ALL",
+    "discretionary": false
+   }
+  }
+ ]
+}

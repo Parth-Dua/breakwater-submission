@@ -1,0 +1,40 @@
+{
+ "provenance": "DOCUMENTED_CONTRACT_SAMPLE_NOT_A_LIVE_JEV_CALL",
+ "source": "https://github.com/langchain-ai/langchainjs/tree/main/libs/providers/langchain-typesafe",
+ "response": {
+  "model": "jev-1.13.0",
+  "answers": {
+   "kind": {
+    "type": "choice",
+    "choice": "FACT",
+    "confidence": 0.84,
+    "probabilities": {
+     "FACT": 0.84,
+     "PROCEDURE": 0.06,
+     "PRECEDENT": 0.06,
+     "POLICY_CHANGE": 0.04
+    }
+   },
+   "scope": {
+    "type": "choice",
+    "choice": "CHARTER_FORM",
+    "confidence": 0.81,
+    "probabilities": {
+     "THIS_CASE": 0.05,
+     "COUNTERPARTY": 0.05,
+     "PORT": 0.05,
+     "CHARTER_FORM": 0.81,
+     "ALL": 0.04
+    }
+   },
+   "discretionary": {
+    "type": "noul",
+    "noul": 0.12
+   }
+  },
+  "usage": {
+   "input_tokens": 500,
+   "output_tokens": 0
+  }
+ }
+}

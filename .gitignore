@@ -1,0 +1,29 @@
+
+.env*
+!.env.example
+node_modules/
+.next/
+out/
+dist/
+coverage/
+playwright-report/
+test-results/
+.vercel/
+*.tsbuildinfo
+*.log
+.DS_Store
+*.pem
+*.key
+.tools/
+artifacts/
+
+# Private local demo sign-in handoff
+demo-access.local.md
+
+# Built from installed package versions before dev/build
+/public/vendor/
+
+# Machine-local live reports require current-source validation.
+fixtures/agent-transcripts/*live*.json
+fixtures/agent-transcripts/acceptance.json
+fixtures/classifier/jev-openrouter-live.json

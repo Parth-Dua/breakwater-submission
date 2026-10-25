@@ -1,0 +1,2018 @@
+{
+ "verified": true,
+ "realProvider": true,
+ "humanEvidence": false,
+ "origin": "SCRIPTED_RESPONDER",
+ "ranAt": "2026-10-25T08:48:28.966Z",
+ "result": {
+  "id": "sd720zdw6k8ct5m139mj5kfrz18gz74w",
+  "metrics": {
+   "askPrecision": 1,
+   "askRecall": 0.9393939393939394,
+   "baseTokensIn": 1202434,
+   "cacheRead": 2307032,
+   "cacheWrite": 9545,
+   "controlViolations": 0,
+   "disputePrecision": 0.875,
+   "disputeRecall": 1,
+   "estimatedCostCents": 378,
+   "failures": 5,
+   "materialityHandling": 1,
+   "materialityTotal": 2,
+   "statementExactness": 0.7916666666666666,
+   "statementsExact": 19,
+   "status": "COMPLETE",
+   "tokensIn": 3519011,
+   "tokensOut": 88375,
+   "unnecessaryAsks": 0,
+   "voyages": 24,
+   "wallMs": 1543361
+  },
+  "model": "claude-sonnet-5-5",
+  "perVoyage": [
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 102930,
+     "cacheWrite": 6998,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 5900000,
+     "recoverableCents": 5850000,
+     "tokensIn": 54792,
+     "tokensOut": 4054
+    },
+    "actualCaseCode": "SC-01-z18gz74w",
+    "code": "SC-01",
+    "expected": {
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 5900000,
+     "recoverableCents": 5850000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7673,
+      "tokensOut": 887
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 18461,
+      "tokensOut": 1435
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4213,
+      "tokensOut": 212
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 19671,
+      "tokensOut": 1273
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4774,
+      "tokensOut": 247
+     }
+    ],
+    "vessel": "MV Aster Vale",
+    "wallMs": 74353
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "LAYTIME_START"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 3187500,
+     "recoverableCents": 2287500,
+     "tokensIn": 40195,
+     "tokensOut": 3306
+    },
+    "actualCaseCode": "SC-02-z18gz74w",
+    "code": "SC-02",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "LAYTIME_START"
+     ],
+     "payableCents": 3150000,
+     "recoverableCents": 2250000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7680,
+      "tokensOut": 984
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 12682,
+      "tokensOut": 1152
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 15037,
+      "tokensOut": 905
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4796,
+      "tokensOut": 265
+     }
+    ],
+    "vessel": "MV Kestrel",
+    "wallMs": 60267
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "COMPLETION_TIME"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 3062500,
+     "recoverableCents": 2750000,
+     "tokensIn": 40314,
+     "tokensOut": 3154
+    },
+    "actualCaseCode": "SC-03-z18gz74w",
+    "code": "SC-03",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "COMPLETION_TIME"
+     ],
+     "payableCents": 3062500,
+     "recoverableCents": 2750000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7666,
+      "tokensOut": 864
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 12801,
+      "tokensOut": 1022
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 15061,
+      "tokensOut": 1009
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4786,
+      "tokensOut": 259
+     }
+    ],
+    "vessel": "MV Halden Star",
+    "wallMs": 56561
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 104920,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "SHIFTING"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 2240000,
+     "recoverableCents": 1540000,
+     "tokensIn": 50946,
+     "tokensOut": 3609
+    },
+    "actualCaseCode": "SC-04-z18gz74w",
+    "code": "SC-04",
+    "expected": {
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "SHIFTING"
+     ],
+     "payableCents": 2240000,
+     "recoverableCents": 1540000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7806,
+      "tokensOut": 1010
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16934,
+      "tokensOut": 1185
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4570,
+      "tokensOut": 233
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16354,
+      "tokensOut": 971
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5282,
+      "tokensOut": 210
+     }
+    ],
+    "vessel": "MV Solstice Bay",
+    "wallMs": 70613
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 84569,
+     "cacheWrite": 2547,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 6230000,
+     "recoverableCents": 3180000,
+     "tokensIn": 43067,
+     "tokensOut": 3365
+    },
+    "actualCaseCode": "SC-05-z18gz74w",
+    "code": "SC-05",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 6230000,
+     "recoverableCents": 3180000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7736,
+      "tokensOut": 924
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 14220,
+      "tokensOut": 1293
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16003,
+      "tokensOut": 919
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5108,
+      "tokensOut": 229
+     }
+    ],
+    "vessel": "MV Cobalt Reach",
+    "wallMs": 58841
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 109371,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 6300000,
+     "recoverableCents": 5490000,
+     "tokensIn": 56571,
+     "tokensOut": 3987
+    },
+    "actualCaseCode": "SC-06-z18gz74w",
+    "code": "SC-06",
+    "expected": {
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 6300000,
+     "recoverableCents": 5490000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7715,
+      "tokensOut": 964
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 17703,
+      "tokensOut": 1307
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4710,
+      "tokensOut": 219
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 21175,
+      "tokensOut": 1254
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5268,
+      "tokensOut": 243
+     }
+    ],
+    "vessel": "MV Arden Tide",
+    "wallMs": 76797
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      }
+     ],
+     "cacheRead": 100469,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 2250000,
+     "recoverableCents": 750000,
+     "tokensIn": 54635,
+     "tokensOut": 3997
+    },
+    "actualCaseCode": "SC-07-z18gz74w",
+    "code": "SC-07",
+    "expected": {
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 2250000,
+     "recoverableCents": 1350000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7665,
+      "tokensOut": 944
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 20882,
+      "tokensOut": 1675
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 13026,
+      "tokensOut": 682
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 13062,
+      "tokensOut": 696
+     }
+    ],
+    "vessel": "MV Kestrel",
+    "wallMs": 65162
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 109371,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 5280000,
+     "recoverableCents": 1980000,
+     "tokensIn": 63119,
+     "tokensOut": 4770
+    },
+    "actualCaseCode": "SC-08-z18gz74w",
+    "code": "SC-08",
+    "expected": {
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 5280000,
+     "recoverableCents": 1980000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7360,
+      "tokensOut": 903
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 22894,
+      "tokensOut": 1695
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 8368,
+      "tokensOut": 667
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 18797,
+      "tokensOut": 1275
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5700,
+      "tokensOut": 230
+     }
+    ],
+    "vessel": "MV Solstice Bay",
+    "wallMs": 82095
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 15000,
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 104920,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 7015000,
+     "recoverableCents": 6840000,
+     "tokensIn": 49586,
+     "tokensOut": 3646
+    },
+    "actualCaseCode": "SC-09-z18gz74w",
+    "code": "SC-09",
+    "expected": {
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 15000,
+     "disputeLines": [],
+     "payableCents": 7015000,
+     "recoverableCents": 6840000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7891,
+      "tokensOut": 858
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16431,
+      "tokensOut": 1308
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4274,
+      "tokensOut": 248
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 15977,
+      "tokensOut": 985
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5013,
+      "tokensOut": 247
+     }
+    ],
+    "vessel": "MV Aster Vale",
+    "wallMs": 68207
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "FEE"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 4275000,
+     "recoverableCents": 3375000,
+     "tokensIn": 43670,
+     "tokensOut": 3370
+    },
+    "actualCaseCode": "SC-10-z18gz74w",
+    "code": "SC-10",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "FEE"
+     ],
+     "payableCents": 4275000,
+     "recoverableCents": 3375000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 8296,
+      "tokensOut": 907
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 13724,
+      "tokensOut": 1151
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16497,
+      "tokensOut": 1057
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5153,
+      "tokensOut": 255
+     }
+    ],
+    "vessel": "MV Kestrel",
+    "wallMs": 59539
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [],
+     "cacheRead": 92910,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 2875000,
+     "recoverableCents": 2600000,
+     "tokensIn": 46997,
+     "tokensOut": 3676
+    },
+    "actualCaseCode": "SC-11-z18gz74w",
+    "code": "SC-11",
+    "expected": {
+     "asks": [],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 2875000,
+     "recoverableCents": 2600000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7877,
+      "tokensOut": 891
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 13411,
+      "tokensOut": 1130
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 12432,
+      "tokensOut": 697
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 13277,
+      "tokensOut": 958
+     }
+    ],
+    "vessel": "MV Halden Star",
+    "wallMs": 56928
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      }
+     ],
+     "cacheRead": 91567,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 2720000,
+     "recoverableCents": 1960000,
+     "tokensIn": 47379,
+     "tokensOut": 3469
+    },
+    "actualCaseCode": "SC-12-z18gz74w",
+    "code": "SC-12",
+    "expected": {
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      },
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 2720000,
+     "recoverableCents": 1960000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 8212,
+      "tokensOut": 919
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 17089,
+      "tokensOut": 1232
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4485,
+      "tokensOut": 228
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 17593,
+      "tokensOut": 1090
+     }
+    ],
+    "vessel": "MV Solstice Bay",
+    "wallMs": 57092
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "CURRENCY"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 3430000,
+     "recoverableCents": 1500000,
+     "tokensIn": 42856,
+     "tokensOut": 3681
+    },
+    "actualCaseCode": "SC-13-z18gz74w",
+    "code": "SC-13",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 3430000,
+     "recoverableCents": 1500000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7738,
+      "tokensOut": 945
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 13356,
+      "tokensOut": 1068
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16861,
+      "tokensOut": 1427
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4901,
+      "tokensOut": 241
+     }
+    ],
+    "vessel": "MV Cobalt Reach",
+    "wallMs": 53433
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 113822,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "LAYTIME_START",
+      "SHIFTING"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 4750000,
+     "recoverableCents": 4815000,
+     "tokensIn": 56004,
+     "tokensOut": 3791
+    },
+    "actualCaseCode": "SC-14-z18gz74w",
+    "code": "SC-14",
+    "expected": {
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "LAYTIME_START",
+      "SHIFTING"
+     ],
+     "payableCents": 4700000,
+     "recoverableCents": 4770000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 9797,
+      "tokensOut": 1082
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16533,
+      "tokensOut": 1197
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4576,
+      "tokensOut": 192
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16650,
+      "tokensOut": 882
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 8448,
+      "tokensOut": 438
+     }
+    ],
+    "vessel": "MV Arden Tide",
+    "wallMs": 71949
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 15000,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "COMPLETION_TIME"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 2415000,
+     "recoverableCents": 3100000,
+     "tokensIn": 40766,
+     "tokensOut": 3173
+    },
+    "actualCaseCode": "SC-15-z18gz74w",
+    "code": "SC-15",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 15000,
+     "disputeLines": [
+      "COMPLETION_TIME"
+     ],
+     "payableCents": 2415000,
+     "recoverableCents": 3100000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7701,
+      "tokensOut": 863
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 12773,
+      "tokensOut": 1070
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 15443,
+      "tokensOut": 987
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 4849,
+      "tokensOut": 253
+     }
+    ],
+    "vessel": "MV Corran Isle",
+    "wallMs": 61075
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 82665,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "SHIFTING"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 4500000,
+     "recoverableCents": 3450000,
+     "tokensIn": 44934,
+     "tokensOut": 3376
+    },
+    "actualCaseCode": "SC-16-z18gz74w",
+    "code": "SC-16",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "SHIFTING"
+     ],
+     "payableCents": 4500000,
+     "recoverableCents": 3450000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7020,
+      "tokensOut": 928
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 14300,
+      "tokensOut": 1126
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 18028,
+      "tokensOut": 1088
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5586,
+      "tokensOut": 234
+     }
+    ],
+    "vessel": "MV Juniper Sound",
+    "wallMs": 52335
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 113822,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "LAYTIME_START"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 2760000,
+     "recoverableCents": 0,
+     "tokensIn": 63259,
+     "tokensOut": 4400
+    },
+    "actualCaseCode": "SC-17-z18gz74w",
+    "code": "SC-17",
+    "expected": {
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "LAYTIME_START"
+     ],
+     "payableCents": 2720000,
+     "recoverableCents": 0
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7020,
+      "tokensOut": 929
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 20990,
+      "tokensOut": 1611
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 12984,
+      "tokensOut": 680
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 16783,
+      "tokensOut": 953
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5482,
+      "tokensOut": 227
+     }
+    ],
+    "vessel": "MV Solstice Bay",
+    "wallMs": 75099
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 128518,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "COMPLETION_TIME"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 5625000,
+     "recoverableCents": 9450000,
+     "tokensIn": 70834,
+     "tokensOut": 4992
+    },
+    "actualCaseCode": "SC-18-z18gz74w",
+    "code": "SC-18",
+    "expected": {
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "COMPLETION_TIME"
+     ],
+     "payableCents": 5625000,
+     "recoverableCents": 9450000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 8754,
+      "tokensOut": 945
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 18298,
+      "tokensOut": 1231
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7734,
+      "tokensOut": 460
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 17698,
+      "tokensOut": 940
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5898,
+      "tokensOut": 241
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 12452,
+      "tokensOut": 1175
+     }
+    ],
+    "vessel": "MV Kestrel",
+    "wallMs": 87830
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 5460000,
+     "recoverableCents": 2280000,
+     "tokensIn": 44757,
+     "tokensOut": 3215
+    },
+    "actualCaseCode": "SC-19-z18gz74w",
+    "code": "SC-19",
+    "expected": {
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 5460000,
+     "recoverableCents": 2280000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7695,
+      "tokensOut": 878
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 14435,
+      "tokensOut": 1146
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 17085,
+      "tokensOut": 925
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5542,
+      "tokensOut": 266
+     }
+    ],
+    "vessel": "MV Cobalt Reach",
+    "wallMs": 57072
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 2400000,
+     "recoverableCents": 1680000,
+     "tokensIn": 47650,
+     "tokensOut": 3096
+    },
+    "actualCaseCode": "SC-20-z18gz74w",
+    "code": "SC-20",
+    "expected": {
+     "asks": [
+      {
+       "kind": "COMMERCIAL_DECISION",
+       "role": "trader"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 2400000,
+     "recoverableCents": 1680000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 9115,
+      "tokensOut": 905
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 18759,
+      "tokensOut": 1260
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5060,
+      "tokensOut": 222
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 14716,
+      "tokensOut": 709
+     }
+    ],
+    "vessel": "MV Solstice Bay",
+    "wallMs": 59370
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "LAYTIME_START",
+      "COMPLETION_TIME",
+      "SHIFTING"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 5145000,
+     "recoverableCents": 3975000,
+     "tokensIn": 49749,
+     "tokensOut": 3283
+    },
+    "actualCaseCode": "SC-21-z18gz74w",
+    "code": "SC-21",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "LAYTIME_START",
+      "COMPLETION_TIME",
+      "SHIFTING"
+     ],
+     "payableCents": 5110000,
+     "recoverableCents": 3950000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 9044,
+      "tokensOut": 972
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 15048,
+      "tokensOut": 1082
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 19049,
+      "tokensOut": 1014
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 6608,
+      "tokensOut": 215
+     }
+    ],
+    "vessel": "MV Cobalt Reach",
+    "wallMs": 60431
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 113822,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "FEE"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 2625000,
+     "recoverableCents": 1440000,
+     "tokensIn": 68352,
+     "tokensOut": 4484
+    },
+    "actualCaseCode": "SC-22-z18gz74w",
+    "code": "SC-22",
+    "expected": {
+     "asks": [
+      {
+       "kind": "CONFIRM_FACT",
+       "role": "ops"
+      },
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [
+      "FEE"
+     ],
+     "payableCents": 2625000,
+     "recoverableCents": 1440000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 8762,
+      "tokensOut": 903
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 24023,
+      "tokensOut": 1666
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 9052,
+      "tokensOut": 667
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 19920,
+      "tokensOut": 1004
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 6595,
+      "tokensOut": 244
+     }
+    ],
+    "vessel": "MV Kestrel",
+    "wallMs": 72333
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "cacheRead": 87116,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [
+      "CURRENCY"
+     ],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 5775000,
+     "recoverableCents": 4275000,
+     "tokensIn": 45769,
+     "tokensOut": 3317
+    },
+    "actualCaseCode": "SC-23-z18gz74w",
+    "code": "SC-23",
+    "expected": {
+     "asks": [
+      {
+       "kind": "PAYMENT_APPROVAL",
+       "role": "controller"
+      }
+     ],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 5775000,
+     "recoverableCents": 4275000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 8369,
+      "tokensOut": 891
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 14738,
+      "tokensOut": 1197
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "WAITING_HUMAN",
+      "tokensIn": 17107,
+      "tokensOut": 1007
+     },
+     {
+      "error": null,
+      "kind": "ASK_ANSWERED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 5555,
+      "tokensOut": 222
+     }
+    ],
+    "vessel": "MV Corran Isle",
+    "wallMs": 54839
+   },
+   {
+    "actual": {
+     "acceptedFeeCents": 0,
+     "asks": [],
+     "cacheRead": 69312,
+     "cacheWrite": 0,
+     "controlViolations": 0,
+     "disputeLines": [],
+     "errors": [],
+     "models": [
+      "claude-sonnet-5-5"
+     ],
+     "payableCents": 1312500,
+     "recoverableCents": 1350000,
+     "tokensIn": 36233,
+     "tokensOut": 3164
+    },
+    "actualCaseCode": "SC-24-z18gz74w",
+    "code": "SC-24",
+    "expected": {
+     "asks": [],
+     "belowMaterialityCents": 0,
+     "disputeLines": [],
+     "payableCents": 1312500,
+     "recoverableCents": 1350000
+    },
+    "state": "COMPLETE",
+    "tasks": [
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 7025,
+      "tokensOut": 956
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 12964,
+      "tokensOut": 1134
+     },
+     {
+      "error": null,
+      "kind": "DOCUMENT_RECEIVED",
+      "model": "claude-sonnet-5-5",
+      "state": "SUCCEEDED",
+      "tokensIn": 16244,
+      "tokensOut": 1074
+     }
+    ],
+    "vessel": "MV Juniper Sound",
+    "wallMs": 51140
+   }
+  ],
+  "ranAt": 1792916233966,
+  "voyages": 24
+ },
+ "sourceHashes": {
+  "convex/score.ts": "0e216560daa0d66134761622c58f8e85fa0dccb90b8d13e7ece7383732a925cd",
+  "src/domain/score.ts": "76c3fc58169661d8cf2871402b3729635804c0049c3ed9ca7756d9a9d72478d4",
+  "convex/sources/read.ts": "909794ff163e2bb12b5e83eb2a04de8b96f443219884037a5857b52ce639bb16",
+  "src/domain/capabilities.ts": "c2fe9a32c3d9db513fe8044411016d5bcce44baca569e1e93c56226bcfe0f931",
+  "convex/schema.ts": "54387ef0b7c477b73e1db4e828ef568318719426411980dc0d0c601a297bbac7",
+  "convex/node/agent.ts": "7a4ac8309f1231240137d260d0bc73189189ed17e8c0ae1e5d42e13e438b3019",
+  "convex/node/claude.ts": "6067a1179cdda209deb304a5d558b77a9a6d7e8f8ca16b2bedb7f0455e8ac812",
+  "convex/node/extract.ts": "2f32c7c2a348f91d48d9e1750e46496eae645a85a40575d938f754582b247518",
+  "convex/node/prompts/agent.ts": "572554962caa2c1daba910fed51a583545277e3dc8004e90223bcee4ca4a333b",
+  "convex/node/tools/definitions.ts": "e4718727d42aac15fffa261d60126e88bc9fecdcad8a7cdb58e20df24cf56b61",
+  "convex/agent/tools.ts": "e77b3735165fb550fbb64e3e07327efd517b3dd715f2f6003ea555e4f4cf2287",
+  "convex/agent/state.ts": "f98d732c1281d954631ab0459db0495feab8c78ef9e9e53823a7394c7de725f9",
+  "convex/gateway.ts": "23447537f6d195c4df307cb2f639ca1bcbb6b29419aff6b83890ad64c60811c1",
+  "convex/asks.ts": "341861762a5caf9bc54e9f695a5bc273d98d63121fe37886893989e6ec8d097e",
+  "fixtures/world/scoreboard.json": "8e062a38f3269f5ea58df4dd83f5238b72736f1e3992287f54bdd4dc3a20ab50",
+  "fixtures/documents/manifest.json": "ed992cf6813c37b8fad202239e8a408773aee8bf5663ddead3cebb8fe4ad03d2",
+  "src/world/caseBuilder.ts": "6308e6f0f319893919309a055f23aa76ab246c78f388c417b8438493de7f7371"
+ }
+}

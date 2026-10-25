@@ -1,0 +1,4 @@
+import{spawnSync}from'node:child_process';
+import{mkdirSync,writeFileSync}from'node:fs';
+const result=spawnSync('node_modules/.bin/convex',['run','internal/approvalEvidence:verify',JSON.stringify({scenarioCode:'breakwater-demo',sourceClaimCode:'CL-203',unseenClaimCode:'CL-204',nearMissClaimCode:'CL-205'})],{encoding:'utf8',timeout:45_000});
+try{if(result.status!==0)throw new Error('Call failed');const report=JSON.parse(JSON.parse(result.stdout)) as{status:string};mkdirSync('artifacts/live',{recursive:true});writeFileSync('artifacts/live/approval-posting.json',JSON.stringify({...report,verifiedAt:new Date().toISOString()},null,2)+'\n');console.log(JSON.stringify(report,null,2));process.exit(report.status==='PASS'?0:1);}catch{console.log(JSON.stringify({status:'FAIL',code:'APPROVAL_EVIDENCE_VERIFICATION_UNAVAILABLE'}));process.exit(1);}

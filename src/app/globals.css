@@ -1,0 +1,89 @@
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+/* Breakwater v2 tokens (docs_v2/UI.md §1). Light only. */
+:root {
+  color-scheme: light;
+  --bg: #F6F7F9;
+  --surface: #FFFFFF;
+  --surface-2: #F2F4F7;
+  --border: #E4E7EC;
+  --ink: #101828;
+  --ink-2: #475467;
+  --ink-3: #98A2B3;
+  --navy: #0B1F3A;
+  --agent: #1D4ED8;
+  --pos: #067647;
+  --neg: #B42318;
+  --warn: #B54708;
+  --memory: #6941C6;
+  --laytime: #CBD5E1;
+  --demurrage: #F5B544;
+  --shadow-pop: 0 8px 24px rgba(16, 24, 40, 0.12);
+  --topbar-h: 56px;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-navy: var(--navy);
+  --color-agent: var(--agent);
+  --color-pos: var(--pos);
+  --color-neg: var(--neg);
+  --color-warn: var(--warn);
+  --color-memory: var(--memory);
+  --color-laytime: var(--laytime);
+  --color-demurrage: var(--demurrage);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --radius-panel: 8px;
+  --radius-control: 6px;
+  --shadow-pop: var(--shadow-pop);
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+.section-title { font-size: 16px; line-height: 24px; font-weight: 600; color: var(--ink); }
+.label { font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.02em; color: var(--ink-3); }
+
+:focus-visible { outline: 2px solid var(--agent); outline-offset: 2px; border-radius: 4px; }
+
+@keyframes bw-slide-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+@keyframes bw-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bw-highlight { from { background-color: rgba(29,78,216,.06); } to { background-color: transparent; } }
+.animate-case-in { animation: bw-slide-in 200ms ease-out both, bw-highlight 2s ease-out both; }
+
+@keyframes bw-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+.animate-row-in { animation: bw-slide-in 200ms ease-out both; }
+.animate-step-in { animation: bw-fade-in 150ms ease-out both; }
+.animate-new { animation: bw-pulse 900ms ease-in-out 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* pdf.js text positioning; the canvas supplies glyph paint and these spans supply selectable quotes. */
+.textLayer { text-align: initial; overflow: clip; opacity: 1; line-height: 1; -webkit-text-size-adjust: none; text-size-adjust: none; forced-color-adjust: none; transform-origin: 0 0; caret-color: CanvasText; z-index: 2; --min-font-size: 1; --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size)); --min-font-size-inv: calc(1 / var(--min-font-size)); }
+.textLayer :is(span, br) { color: transparent; position: absolute; white-space: pre; cursor: text; transform-origin: 0% 0%; }
+.textLayer > :not(.markedContent), .textLayer .markedContent span:not(.markedContent) { z-index: 1; }
+.textLayer .markedContent { display: contents; }
+.textLayer ::selection { background: rgba(29,78,216,.25); }
+
+.textLayer > :not(.markedContent), .textLayer .markedContent span:not(.markedContent) { --font-height: 0; --scale-x: 1; --rotate: 0deg; font-size: calc(var(--text-scale-factor) * var(--font-height)); transform: rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv)); }

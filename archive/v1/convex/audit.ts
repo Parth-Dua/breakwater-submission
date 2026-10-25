@@ -1,0 +1,29 @@
+import{query,type QueryCtx}from'./_generated/server';
+import{v}from'convex/values';
+import{paginationOptsValidator,paginationResultValidator}from'convex/server';
+import schema from'./schema';
+import{requireReader}from'./access';
+import{currentScenario}from'./workspace';
+import type{Doc}from'./_generated/dataModel';
+async function entity(ctx:QueryCtx,event:Doc<'auditEvents'>){
+ const lookup=async<T extends 'claims'|'workItems'|'procedureCandidates'|'journalEntries'|'caseEpisodes'|'invoices'|'scenarioRuns'>(table:T)=>{const id=ctx.db.normalizeId(table,event.entityId);return id?ctx.db.get(id):null;};
+ if(event.entityType==='claim'){const row=await lookup('claims');if(row?.scenarioId===event.scenarioId)return{label:row.claimCode,href:`/claims/${row.claimCode}`};}
+ if(event.entityType==='procedureCandidate'){const row=await lookup('procedureCandidates');if(row?.scenarioId===event.scenarioId)return{label:row.candidateCode,href:`/memory/${row.candidateCode}`};}
+ if(event.entityType==='episode'){const row=await lookup('caseEpisodes');if(row?.scenarioId===event.scenarioId)return{label:row.episodeCode,href:`/memory/${encodeURIComponent(row.episodeCode)}`};}
+ if(event.entityType==='journalEntry'){const row=await lookup('journalEntries');if(row?.scenarioId===event.scenarioId)return{label:row.entryCode,href:`/ledger#journal-${row._id}`};}
+ if(event.entityType==='workItem'){const row=await lookup('workItems');if(row?.scenarioId===event.scenarioId){const candidate=row.candidateId?await ctx.db.get(row.candidateId):null;return{label:row.type.replaceAll('_',' '),href:candidate?`/memory/${candidate.candidateCode}`:row.type==='OPS_FACT'?`/work/${row._id}`:'/ledger'};}}
+ if(event.entityType==='invoice'){const row=await lookup('invoices');if(row?.scenarioId===event.scenarioId){const claim=await ctx.db.query('claims').withIndex('by_scenario',q=>q.eq('scenarioId',event.scenarioId)).filter(q=>q.eq(q.field('voyageId'),row.voyageId)).first();return{label:row.invoiceCode,href:claim?`/claims/${claim.claimCode}`:'/ledger'};}}
+ if(event.entityType==='scenario')return{label:'Synthetic scenario',href:'/scenarios'};
+ if(event.entityType==='agentRun'){const id=ctx.db.normalizeId('agentRuns',event.entityId),run=id?await ctx.db.get(id):null,claim=run?await ctx.db.get(run.claimId):null;if(claim?.scenarioId===event.scenarioId)return{label:`${claim.claimCode} · investigation`,href:`/claims/${claim.claimCode}`};}
+ return{label:event.entityType,href:null};
+}
+export const listForEntity=query({args:{claimCode:v.optional(v.string()),voyageCode:v.optional(v.string()),actorRole:v.optional(v.string()),entityId:v.optional(v.string()),eventType:v.optional(v.string()),actor:v.optional(v.string()),correlationId:v.optional(v.string()),fromAt:v.optional(v.number()),toAt:v.optional(v.number()),paginationOpts:paginationOptsValidator},returns:paginationResultValidator(v.object({event:schema.doc('auditEvents'),actorLabel:v.string(),actorRoleLabel:v.string(),entityLabel:v.string(),href:v.union(v.null(),v.string())})),handler:async(ctx,args)=>{
+ await requireReader(ctx);const scenario=await currentScenario(ctx);if(!scenario)return{page:[],isDone:true,continueCursor:''};if(args.paginationOpts.numItems>100)throw new Error('Audit page limit100');if(args.fromAt!==undefined&&!Number.isSafeInteger(args.fromAt)||args.toAt!==undefined&&!Number.isSafeInteger(args.toAt))throw new Error('UTC milliseconds required');
+ let entityRefs:string[]|null=null;
+ if(args.claimCode||args.voyageCode){const claims=await ctx.db.query('claims').withIndex('by_scenario',q=>q.eq('scenarioId',scenario._id)).collect(),voyages=await ctx.db.query('voyages').withIndex('by_scenario',q=>q.eq('scenarioId',scenario._id)).collect(),selected=claims.filter(c=>(!args.claimCode||c.claimCode===args.claimCode)&&(!args.voyageCode||voyages.find(v=>v._id===c.voyageId)?.voyageCode===args.voyageCode)),refs=new Set<string>(selected.map(c=>c._id)),episodeRefs=new Set<string>();
+  for(const claim of selected){for(const table of ['workItems','agentRuns','journalEntries','financialProposals','adjustmentProposals','caseEpisodes'] as const){const rows=await ctx.db.query(table).withIndex('by_claim',q=>q.eq('claimId',claim._id)).collect();for(const row of rows.filter(r=>r.scenarioId===scenario._id)){refs.add(row._id);if(table==='caseEpisodes')episodeRefs.add(row._id);}}for(const invoice of await ctx.db.query('invoices').withIndex('by_voyage',q=>q.eq('voyageId',claim.voyageId)).collect())if(invoice.scenarioId===scenario._id)refs.add(invoice._id);}
+  for(const candidate of await ctx.db.query('procedureCandidates').withIndex('by_scenario',q=>q.eq('scenarioId',scenario._id)).collect())if(episodeRefs.has(candidate.sourceEpisodeId))refs.add(candidate._id);entityRefs=[...refs];if(!entityRefs.length)return{page:[],isDone:true,continueCursor:''};
+ }
+ const result=await ctx.db.query('auditEvents').withIndex('by_scenario_at',q=>q.eq('scenarioId',scenario._id)).filter(q=>q.and(...[...(entityRefs?[q.or(...entityRefs.map(id=>q.eq(q.field('entityId'),id)))]:[]),...(args.actorRole?[q.eq(q.field('actorRole'),args.actorRole)]:[]),...(args.entityId?[q.eq(q.field('entityId'),args.entityId)]:[]),...(args.eventType?[q.eq(q.field('eventType'),args.eventType)]:[]),...(args.actor?[q.eq(q.field('actor'),args.actor)]:[]),...(args.correlationId?[q.eq(q.field('correlationId'),args.correlationId)]:[]),...(args.fromAt!==undefined?[q.gte(q.field('at'),args.fromAt)]:[]),...(args.toAt!==undefined?[q.lte(q.field('at'),args.toAt)]:[])])).order('desc').paginate(args.paginationOpts);
+ const page=await Promise.all(result.page.map(async event=>{const id=ctx.db.normalizeId('users',event.actor.replace(/^user:/,'')),user=id?await ctx.db.get(id):null,reference=await entity(ctx,event);return{event,actorLabel:user?.displayName??event.actor,actorRoleLabel:event.actorRole??'Role not captured',entityLabel:reference.label,href:reference.href};}));return{...result,page};
+}});

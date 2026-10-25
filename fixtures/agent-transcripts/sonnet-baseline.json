@@ -1,0 +1,97 @@
+{
+  "model": "claude-sonnet-5-5",
+  "observedOn": "2026-10-24",
+  "source": "Actual local Convex read-back after resumed demo:prepare; no new scenario/reset",
+  "tasks": [
+    {
+      "kind": "DOCUMENT_RECEIVED",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 17225,
+      "tokensOut": 1102
+    },
+    {
+      "kind": "AIS_UPDATE",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 5391,
+      "tokensOut": 369
+    },
+    {
+      "kind": "DOCUMENT_RECEIVED",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 9939,
+      "tokensOut": 901
+    },
+    {
+      "kind": "AIS_UPDATE",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 7108,
+      "tokensOut": 803
+    },
+    {
+      "kind": "FLEET_SCAN",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 2103,
+      "tokensOut": 488
+    },
+    {
+      "kind": "DOCUMENT_RECEIVED",
+      "state": "WAITING_HUMAN",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 22166,
+      "tokensOut": 1613
+    },
+    {
+      "kind": "AIS_UPDATE",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 3,
+      "tokensIn": 14627,
+      "tokensOut": 1193
+    },
+    {
+      "kind": "DOCUMENT_RECEIVED",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 10556,
+      "tokensOut": 782
+    },
+    {
+      "kind": "AIS_UPDATE",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 6037,
+      "tokensOut": 518
+    },
+    {
+      "kind": "FLEET_SCAN",
+      "state": "SUCCEEDED",
+      "model": "claude-sonnet-5-5",
+      "attempt": 1,
+      "tokensIn": 2281,
+      "tokensOut": 464
+    }
+  ],
+  "asks": [
+    {
+      "code": "K-1",
+      "kind": "CONFIRM_FACT",
+      "role": "ops",
+      "question": "Confirm customs hold 3 Oct 17:00\u20134 Oct 05:00? $9,000 of Litoral Gr\u00e3os recovery depends on it.",
+      "status": "OPEN",
+      "remindersSent": 2
+    }
+  ]
+}

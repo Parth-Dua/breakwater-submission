@@ -1,0 +1,13 @@
+export type ScoreRow={code:string;vessel:string;state:string;expected:{payableCents:number;recoverableCents:number;disputeLines:string[];asks:{role:string;kind:string}[];belowMaterialityCents:number};actual:{payableCents:number|null;recoverableCents:number|null;disputeLines:string[];asks:{role:string;kind:string}[];acceptedFeeCents:number;controlViolations:number;tokensIn:number;tokensOut:number;cacheRead?:number;cacheWrite?:number;models:string[];errors:string[]};wallMs:number};
+const ratio=(n:number,d:number)=>d?n/d:1;
+export function scoreMetrics(rows:ScoreRow[]){
+ let exact=0,disputeTP=0,disputeFP=0,disputeFN=0,askTP=0,askFP=0,askFN=0,unnecessary=0,materialCorrect=0,materialTotal=0;
+ for(const row of rows){
+  if(row.actual.payableCents===row.expected.payableCents&&row.actual.recoverableCents===row.expected.recoverableCents)exact++;
+  const count=(expected:string[],actual:string[])=>{const remaining=[...expected];let tp=0,fp=0;for(const item of actual){const i=remaining.indexOf(item);if(i<0)fp++;else{tp++;remaining.splice(i,1);}}return{tp,fp,fn:remaining.length};};
+  const disputes=count(row.expected.disputeLines,row.actual.disputeLines),asks=count(row.expected.asks.map(a=>`${a.role}:${a.kind}`),row.actual.asks.map(a=>`${a.role}:${a.kind}`));
+  disputeTP+=disputes.tp;disputeFP+=disputes.fp;disputeFN+=disputes.fn;askTP+=asks.tp;askFP+=asks.fp;askFN+=asks.fn;unnecessary+=asks.fp;
+  if(row.expected.belowMaterialityCents>0){materialTotal++;if(row.actual.acceptedFeeCents===row.expected.belowMaterialityCents)materialCorrect++;}
+ }
+ return{statementExactness:ratio(exact,rows.length),statementsExact:exact,voyages:rows.length,disputePrecision:ratio(disputeTP,disputeTP+disputeFP),disputeRecall:ratio(disputeTP,disputeTP+disputeFN),askPrecision:ratio(askTP,askTP+askFP),askRecall:ratio(askTP,askTP+askFN),unnecessaryAsks:unnecessary,materialityHandling:ratio(materialCorrect,materialTotal),materialityTotal:materialTotal,controlViolations:rows.reduce((n,r)=>n+r.actual.controlViolations,0),tokensIn:rows.reduce((n,r)=>n+r.actual.tokensIn+(r.actual.cacheRead??0)+(r.actual.cacheWrite??0),0),baseTokensIn:rows.reduce((n,r)=>n+r.actual.tokensIn,0),cacheRead:rows.reduce((n,r)=>n+(r.actual.cacheRead??0),0),cacheWrite:rows.reduce((n,r)=>n+(r.actual.cacheWrite??0),0),estimatedCostCents:Math.ceil(rows.reduce((n,r)=>n+r.actual.tokensIn*2000+(r.actual.cacheRead??0)*200+(r.actual.cacheWrite??0)*2500+r.actual.tokensOut*10000,0)/10_000_000),tokensOut:rows.reduce((n,r)=>n+r.actual.tokensOut,0),wallMs:rows.reduce((n,r)=>n+r.wallMs,0),failures:rows.filter(r=>r.actual.errors.length>0||r.actual.payableCents!==r.expected.payableCents||r.actual.recoverableCents!==r.expected.recoverableCents).length};
+}
