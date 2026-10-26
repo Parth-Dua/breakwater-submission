@@ -6,6 +6,14 @@ When a ship takes longer to load or unload than its contract allows, someone owe
 
 Breakwater follows both sides of that obligation. It checks documents against vessel telemetry, calculates the amounts, asks the right person when a decision needs authority, and records the financial result. Its learning loop turns useful human interventions into approved procedures and contract rules for later cases.
 
+## Watch the demo
+
+Project explanation and application walkthrough.
+
+[![Watch the Breakwater project explanation and application demo on YouTube](https://img.youtube.com/vi/MlzrFt0Pl9k/hqdefault.jpg)](https://youtu.be/MlzrFt0Pl9k)
+
+[Watch on YouTube](https://youtu.be/MlzrFt0Pl9k)
+
 ## What the application does
 
 The **Desk** shows company exposure, open voyages, accounting periods and unanswered questions. Each **Voyage Room** brings together a map, a synchronized evidence timeline, original PDFs, the investigation feed and financial statements. Selecting a human role opens the relevant workspace without losing the case context.
